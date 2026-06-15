@@ -1,7 +1,22 @@
-# Computational - RNA Learning
+# Computational - 2026 RNA related work
+
+**About:**
+Project 1: Competition Team - Logic-gated Drug Delivery for Heterogeneous Breast Cancer
+Project 2: Generic RNA Linker between two proteins
+Project 3: Metal Detection using RNA Riboswitch
 
 ## Table of Contents:
 
+- RNA structure
+- Turner Rules 
+     - for Watson-Crick-Franklin Helices
+     -  for Helices and loops
+- Sliding window
+    - MFE
+- Random
+
+
+## Content
 ### RNA structure 
 - Fundamentals of RNA structures lecture (< 40 min)
 - https://www.youtube.com/watch?v=WCrlm18KQ48
@@ -22,13 +37,6 @@ https://rna.urmc.rochester.edu/NNDB/rna_2004/rna_2004_watson_crick_helices.html#
 
 - What did we learn here?
 
-### Sequence Alignment
-
-### Motifs
-
-### 
-
-### Phylogeny
 
 ### RNA Folding
 
@@ -36,7 +44,6 @@ https://rna.urmc.rochester.edu/NNDB/rna_2004/rna_2004_watson_crick_helices.html#
 
 ### Riboswitch design
 
-### Protac 
 
 ### Random
 - Dot Bracket Notation
