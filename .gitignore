@@ -1,10 +1,10 @@
+# virtual envs
+venv
+.venv
 
 # for Python cache files
-turners_rules/__pycache__
-turners_rules/.pytest_cache
+__pycache__
+.pytest_cache
 
 # charity for debugging
 turners_rules/images
-
-venv
-.venv
