@@ -5,3 +5,6 @@ turners_rules/.pytest_cache
 
 # charity for debugging
 turners_rules/images
+
+venv
+.venv
