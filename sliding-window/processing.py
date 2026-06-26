@@ -2,7 +2,7 @@ import os
 import RNA
 from itertools import combinations
 
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from model import DuplexResult
 from strategy.cofold import cofold_energies
 from strategy.accessibility import mean_unpaired_probability
