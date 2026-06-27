@@ -49,6 +49,12 @@ https://rna.urmc.rochester.edu/NNDB/rna_2004/rna_2004_watson_crick_helices.html#
 - Dot Bracket Notation
 - https://kelleybioinfo.org/algorithms/default.php
 
+- RNA-RNA interaction papers:
+    - https://doi.org/10.1093/bib/bbad421
+    - https://doi.org/10.1093/nargab/lqaf099
+    - https://rna.bocsci.com/support/rna-duplex-formation.html
+    - https://www.numberanalytics.com/blog/ultimate-guide-nucleic-acid-hybridization
+    - https://doi.org/10.1016/j.tibs.2016.07.001
 
 
 # Bibliography 

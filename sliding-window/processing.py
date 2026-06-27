@@ -1,7 +1,5 @@
 import os
 import RNA
-from itertools import combinations
-
 import matplotlib.pyplot as plt
 from model import DuplexResult
 from strategy.cofold import cofold_energies
@@ -85,6 +83,31 @@ def _export_histogram(results: list[DuplexResult], k: int, label: str):
     print(f"  histogram saved → {path}")
 
 
+_RC_TABLE = str.maketrans("AUCG", "UAGC")
+
+def _reverse_complement(seq: str) -> str:
+    """Return the reverse complement of an RNA sequence (A↔U, G↔C, reversed)."""
+    return seq.translate(_RC_TABLE)[::-1]
+
+
+def _best_rc_match(rc: str, windows: list[tuple[int, str]]) -> tuple[int, str]:
+    """
+    Find the window whose sequence most closely matches the target reverse complement.
+
+    Similarity is measured by the number of matching positions (Hamming-style).
+    All windows have the same length as rc, so comparison is position-wise.
+
+    Returns the (start, seq) of the best-matching window.
+    """
+    best_start, best_seq, best_matches = 0, windows[0][1], -1
+    for start, w in windows:
+        matches = sum(a == b for a, b in zip(rc, w))
+        if matches > best_matches:
+            best_matches = matches
+            best_start, best_seq = start, w
+    return best_start, best_seq
+
+
 def scan_pairwise(
     seq: str,
     k: int,
@@ -93,16 +116,16 @@ def scan_pairwise(
     label: str = "seq",
 ) -> list[DuplexResult]:
     """
-    Find windows of length k within a single RNA sequence that preferentially
-    form intermolecular duplexes with each other rather than remaining as
-    individual single-stranded structures.
+    For each window of length k, find its best reverse-complement partner among
+    all other windows in the same sequence, then evaluate whether that pair
+    preferentially forms a duplex.
 
-    For every ordered pair (window_i, window_j) with i < j, the function runs
-    RNAfold on each window alone, then RNAcofold on the joined duplex, and
-    computes ΔG_binding = ΔG_cofold − (ΔG_i + ΔG_j).  A strongly negative
-    ΔG_binding means the two windows release more energy by pairing with each
-    other than they gain from their own intramolecular structure, so the duplex
-    is thermodynamically favoured.
+    This gives exactly N results for N windows — one candidate partner per window —
+    rather than the C(N,2) combinatorial explosion of comparing every pair.
+
+    The partner is the window whose sequence most closely matches the reverse
+    complement of the query window (highest position-wise base match count).
+    RNAcofold then decides whether the thermodynamics actually favour binding.
 
     Args:
         seq:   Full transcript, RNA (U-alphabet).
@@ -118,17 +141,17 @@ def scan_pairwise(
         Side-effect: saves a PNG histogram to data/exports/.
     """
     windows = list(_sliding_window(seq, k, step))
-    pairs   = list(combinations(range(len(windows)), 2))
-
-    print(f"  k={k}: {len(windows)} windows → {len(pairs)} pairs")
+    print(f"  k={k}: {len(windows)} windows → {len(windows)} candidate pairs")
 
     results: list[DuplexResult] = []
-    for idx, (i, j) in enumerate(pairs):
-        sa, wa = windows[i]
-        sb, wb = windows[j]
+    for i, (sa, wa) in enumerate(windows):
+        rc = _reverse_complement(wa)
+        # exclude the window itself from partner search
+        others = [w for w in windows if w[0] != sa]
+        if not others:
+            continue
+        sb, wb = _best_rc_match(rc, others)
         results.append(_analyze_pair(sa, wa, sb, wb))
-        if (idx + 1) % 100 == 0:
-            print(f"    {idx + 1}/{len(pairs)} pairs done …")
 
     _export_histogram(results, k, label)
 
