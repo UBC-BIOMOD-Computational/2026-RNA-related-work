@@ -39,41 +39,6 @@ CDH1: 4811 nt   VIM: 2154 nt
         acc_a=0.522  acc_b=0.537  score=109.530
         structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 
-  # 6  [1980]  vs  [1980]
-        seq_a=UCCUCCCAAUACAUCUCCCUUCACAGCAGAACUAACACACGGGGCGAGUGCCAACUGGAC
-        seq_b=GUCCAGUUGGCACUCGCCCCGUGUGUUAGUUCUGCUGUGAAGGGAGAUGUAUUGGGAGGA
-        ΔG_a=-8.40  ΔG_b=-12.10  ΔG_cofold=-129.50  ΔG_binding=-109.00 kcal/mol  [STRONG]
-        acc_a=0.597  acc_b=0.440  score=109.519
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 7  [3300]  vs  [3300]
-        seq_a=GCUCACUGCAGCCUUGUCCUCCCAGGCUCAAGCUAUCCUUGCACCUCAGCCUCCCAAGUA
-        seq_b=UACUUGGGAGGCUGAGGUGCAAGGAUAGCUUGAGCCUGGGAGGACAAGGCUGCAGUGAGC
-        ΔG_a=-8.50  ΔG_b=-18.40  ΔG_cofold=-135.50  ΔG_binding=-108.60 kcal/mol  [STRONG]
-        acc_a=0.588  acc_b=0.448  score=109.118
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 8  [2580]  vs  [2580]
-        seq_a=UACUGACCCCACAGCCCCGCCUUAUGAUUCUCUGCUCGUGUUUGACUAUGAAGGAAGCGG
-        seq_b=CCGCUUCCUUCAUAGUCAAACACGAGCAGAGAAUCAUAAGGCGGGGCUGUGGGGUCAGUA
-        ΔG_a=-7.50  ΔG_b=-12.00  ΔG_cofold=-126.60  ΔG_binding=-107.10 kcal/mol  [STRONG]
-        acc_a=0.511  acc_b=0.502  score=107.607
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 9  [4080]  vs  [4080]
-        seq_a=AGUGCCUAAAGUGCUGCAGCCAAAGACAGAGCGGAACUAUGAAAAGUGGGCUUGGAGAUG
-        seq_b=CAUCUCCAAGCCCACUUUUCAUAGUUCCGCUCUGUCUUUGGCUGCAGCACUUUAGGCACU
-        ΔG_a=-8.90  ΔG_b=-6.60  ΔG_cofold=-122.50  ΔG_binding=-107.00 kcal/mol  [STRONG]
-        acc_a=0.609  acc_b=0.594  score=107.602
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  #10  [420]  vs  [420]
-        seq_a=GGUCUACGCCUGGGACUCCACCUACAGAAAGUUUUCCACCAAAGUCACGCUGAAUACAGU
-        seq_b=ACUGUAUUCAGCGUGACUUUGGUGGAAAACUUUCUGUAGGUGGAGUCCCAGGCGUAGACC
-        ΔG_a=-6.60  ΔG_b=-8.80  ΔG_cofold=-122.30  ΔG_binding=-106.90 kcal/mol  [STRONG]
-        acc_a=0.603  acc_b=0.496  score=107.450
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
 === CDH1  window k=82 ===
   k=82: 58 windows → 58 candidate pairs
   histogram saved → ./data/exports\CDH1_k82_histogram.png
@@ -112,41 +77,6 @@ CDH1: 4811 nt   VIM: 2154 nt
         ΔG_a=-16.40  ΔG_b=-14.20  ΔG_cofold=-177.00  ΔG_binding=-146.40 kcal/mol  [STRONG]
         acc_a=0.468  acc_b=0.631  score=146.950
         structure: .((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))).
-
-  # 6  [1722]  vs  [1722]
-        seq_a=GGAGAUUAAUCCGGACACUGGUGCCAUUUCCACUCGGGCUGAGCUGGACAGGGAGGAUUUUGAGCACGUGAAGAACAGCACG
-        seq_b=CGUGCUGUUCUUCACGUGCUCAAAAUCCUCCCUGUCCAGCUCAGCCCGAGUGGAAAUGGCACCAGUGUCCGGAUUAAUCUCC
-        ΔG_a=-19.50  ΔG_b=-14.10  ΔG_cofold=-177.30  ΔG_binding=-143.70 kcal/mol  [STRONG]
-        acc_a=0.481  acc_b=0.526  score=144.203
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 7  [984]  vs  [984]
-        seq_a=AGACGCGGACGAUGAUGUGAACACCUACAAUGCCGCCAUCGCUUACACCAUCCUCAGCCAAGAUCCUGAGCUCCCUGACAAA
-        seq_b=UUUGUCAGGGAGCUCAGGAUCUUGGCUGAGGAUGGUGUAAGCGAUGGCGGCAUUGUAGGUGUUCACAUCAUCGUCCGCGUCU
-        ΔG_a=-11.00  ΔG_b=-22.00  ΔG_cofold=-176.40  ΔG_binding=-143.40 kcal/mol  [STRONG]
-        acc_a=0.586  acc_b=0.427  score=143.907
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((..)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 8  [3526]  vs  [3526]
-        seq_a=CAGCUCCCCAACUCCCUGCCAUUUUUUAAGAGACAGUUUCGCUCCAUCGCCCAGGCCUGGGAUGCAGUGAUGUGAUCAUAGC
-        seq_b=GCUAUGAUCACAUCACUGCAUCCCAGGCCUGGGCGAUGGAGCGAAACUGUCUCUUAAAAAAUGGCAGGGAGUUGGGGAGCUG
-        ΔG_a=-14.50  ΔG_b=-19.40  ΔG_cofold=-176.70  ΔG_binding=-142.80 kcal/mol  [STRONG]
-        acc_a=0.571  acc_b=0.468  score=143.320
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 9  [82]  vs  [82]
-        seq_a=CCGCACCCGGCGCCUGCCCUCGCUCGGCGUCCCCGGCCAGCCAUGGGCCCUUGGAGCCGCAGCCUCUCGGCGCUGCUGCUGC
-        seq_b=GCAGCAGCAGCGCCGAGAGGCUGCGGCUCCAAGGGCCCAUGGCUGGCCGGGGACGCCGAGCGAGGGCAGGCGCCGGGUGCGG
-        ΔG_a=-36.00  ΔG_b=-38.40  ΔG_cofold=-217.30  ΔG_binding=-142.90 kcal/mol  [STRONG]
-        acc_a=0.402  acc_b=0.421  score=143.312
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  #10  [410]  vs  [410]
-        seq_a=UCCAUUUCUUGGUCUACGCCUGGGACUCCACCUACAGAAAGUUUUCCACCAAAGUCACGCUGAAUACAGUGGGGCACCACCA
-        seq_b=UGGUGGUGCCCCACUGUAUUCAGCGUGACUUUGGUGGAAAACUUUCUGUAGGUGGAGUCCCAGGCGUAGACCAAGAAAUGGA
-        ΔG_a=-14.00  ΔG_b=-16.10  ΔG_cofold=-172.70  ΔG_binding=-142.60 kcal/mol  [STRONG]
-        acc_a=0.575  acc_b=0.484  score=143.129
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 
 === VIM  window k=60 ===
   k=60: 35 windows → 35 candidate pairs
@@ -187,41 +117,6 @@ CDH1: 4811 nt   VIM: 2154 nt
         acc_a=0.503  acc_b=0.434  score=110.269
         structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 
-  # 6  [540]  vs  [540]
-        seq_a=CCUACAGCCUGGGCAGCGCGCUGCGCCCCAGCACCAGCCGCAGCCUCUACGCCUCGUCCC
-        seq_b=GGGACGAGGCGUAGAGGCUGCGGCUGGUGCUGGGGCGCAGCGCGCUGCCCAGGCUGUAGG
-        ΔG_a=-17.80  ΔG_b=-25.50  ΔG_cofold=-152.50  ΔG_binding=-109.20 kcal/mol  [STRONG]
-        acc_a=0.504  acc_b=0.420  score=109.662
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 7  [240]  vs  [240]
-        seq_a=CCUAAACCGCUAGGAGCCCUCAAUCGGCGGGACAGCAGGGCGCGUCCUCUGCCACUCUCG
-        seq_b=CGAGAGUGGCAGAGGACGCGCCCUGCUGUCCCGCCGAUUGAGGGCUCCUAGCGGUUUAGG
-        ΔG_a=-16.80  ΔG_b=-16.90  ΔG_cofold=-141.70  ΔG_binding=-108.00 kcal/mol  [STRONG]
-        acc_a=0.477  acc_b=0.422  score=108.450
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 8  [960]  vs  [960]
-        seq_a=ACCUGGCCGAGGACAUCAUGCGCCUCCGGGAGAAAUUGCAGGAGGAGAUGCUUCAGAGAG
-        seq_b=CUCUCUGAAGCAUCUCCUCCUGCAAUUUCUCCCGGAGGCGCAUGAUGUCCUCGGCCAGGU
-        ΔG_a=-15.40  ΔG_b=-13.10  ΔG_cofold=-133.70  ΔG_binding=-105.20 kcal/mol  [STRONG]
-        acc_a=0.432  acc_b=0.458  score=105.645
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 9  [480]  vs  [480]
-        seq_a=GCCCGGGCACCGCGAGCCGGCCGAGCUCCAGCCGGAGCUACGUGACUACGUCCACCCGCA
-        seq_b=UGCGGGUGGACGUAGUCACGUAGCUCCGGCUGGAGCUCGGCCGGCUCGCGGUGCCCGGGC
-        ΔG_a=-19.70  ΔG_b=-26.90  ΔG_cofold=-151.40  ΔG_binding=-104.80 kcal/mol  [STRONG]
-        acc_a=0.427  acc_b=0.318  score=105.172
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  #10  [1320]  vs  [1320]
-        seq_a=ACCUCUCUGAGGCUGCCAACCGGAACAAUGACGCCCUGCGCCAGGCAAAGCAGGAGUCCA
-        seq_b=UGGACUCCUGCUUUGCCUGGCGCAGGGCGUCAUUGUUCCGGUUGGCAGCCUCAGAGAGGU
-        ΔG_a=-15.00  ΔG_b=-18.10  ΔG_cofold=-137.60  ΔG_binding=-104.50 kcal/mol  [STRONG]
-        acc_a=0.534  acc_b=0.406  score=104.970
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
 === VIM  window k=82 ===
   k=82: 26 windows → 26 candidate pairs
   histogram saved → ./data/exports\VIM_k82_histogram.png
@@ -259,39 +154,4 @@ CDH1: 4811 nt   VIM: 2154 nt
         seq_b=CUGCGUCUCUGGCGCGGGGACCUCGGAGCGAGAGUGGCAGAGGACGCGCCCUGCUGUCCCGCCGAUUGAGGGCUCCUAGCGG
         ΔG_a=-28.70  ΔG_b=-33.80  ΔG_cofold=-205.10  ΔG_binding=-142.60 kcal/mol  [STRONG]
         acc_a=0.437  acc_b=0.340  score=142.989
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 6  [492]  vs  [492]
-        seq_a=CGAGCCGGCCGAGCUCCAGCCGGAGCUACGUGACUACGUCCACCCGCACCUACAGCCUGGGCAGCGCGCUGCGCCCCAGCAC
-        seq_b=GUGCUGGGGCGCAGCGCGCUGCCCAGGCUGUAGGUGCGGGUGGACGUAGUCACGUAGCUCCGGCUGGAGCUCGGCCGGCUCG
-        ΔG_a=-26.40  ΔG_b=-38.20  ΔG_cofold=-206.70  ΔG_binding=-142.10 kcal/mol  [STRONG]
-        acc_a=0.438  acc_b=0.308  score=142.473
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 7  [1476]  vs  [1476]
-        seq_a=AGAACUUUGCCGUUGAAGCUGCUAACUACCAAGACACUAUUGGCCGCCUGCAGGAUGAGAUUCAGAAUAUGAAGGAGGAAAU
-        seq_b=AUUUCCUCCUUCAUAUUCUGAAUCUCAUCCUGCAGGCGGCCAAUAGUGUCUUGGUAGUUAGCAGCUUCAACGGCAAAGUUCU
-        ΔG_a=-10.50  ΔG_b=-11.40  ΔG_cofold=-162.10  ΔG_binding=-140.20 kcal/mol  [STRONG]
-        acc_a=0.600  acc_b=0.602  score=140.801
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 8  [820]  vs  [820]
-        seq_a=CCUGCUGGCCGAGCUCGAGCAGCUCAAGGGCCAAGGCAAGUCGCGCCUGGGGGACCUCUACGAGGAGGAGAUGCGGGAGCUG
-        seq_b=CAGCUCCCGCAUCUCCUCCUCGUAGAGGUCCCCCAGGCGCGACUUGCCUUGGCCCUUGAGCUGCUCGAGCUCGGCCAGCAGG
-        ΔG_a=-32.20  ΔG_b=-29.30  ΔG_cofold=-201.00  ΔG_binding=-139.50 kcal/mol  [STRONG]
-        acc_a=0.399  acc_b=0.422  score=139.911
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  # 9  [1394]  vs  [1394]
-        seq_a=CAGGUGCAGUCCCUCACCUGUGAAGUGGAUGCCCUUAAAGGAACCAAUGAGUCCCUGGAACGCCAGAUGCGUGAAAUGGAAG
-        seq_b=CUUCCAUUUCACGCAUCUGGCGUUCCAGGGACUCAUUGGUUCCUUUAAGGGCAUCCACUUCACAGGUGAGGGACUGCACCUG
-        ΔG_a=-17.30  ΔG_b=-21.70  ΔG_cofold=-176.00  ΔG_binding=-137.00 kcal/mol  [STRONG]
-        acc_a=0.492  acc_b=0.452  score=137.472
-        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-  #10  [1312]  vs  [1312]
-        seq_a=GUUUGCUGACCUCUCUGAGGCUGCCAACCGGAACAAUGACGCCCUGCGCCAGGCAAAGCAGGAGUCCACUGAGUACCGGAGA
-        seq_b=UCUCCGGUACUCAGUGGACUCCUGCUUUGCCUGGCGCAGGGCGUCAUUGUUCCGGUUGGCAGCCUCAGAGAGGUCAGCAAAC
-        ΔG_a=-22.90  ΔG_b=-27.00  ΔG_cofold=-186.70  ΔG_binding=-136.80 kcal/mol  [STRONG]
-        acc_a=0.460  acc_b=0.381  score=137.221
         structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
