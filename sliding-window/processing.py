@@ -90,24 +90,6 @@ def _reverse_complement(seq: str) -> str:
     return seq.translate(_RC_TABLE)[::-1]
 
 
-def _best_rc_match(rc: str, windows: list[tuple[int, str]]) -> tuple[int, str]:
-    """
-    Find the window whose sequence most closely matches the target reverse complement.
-
-    Similarity is measured by the number of matching positions (Hamming-style).
-    All windows have the same length as rc, so comparison is position-wise.
-
-    Returns the (start, seq) of the best-matching window.
-    """
-    best_start, best_seq, best_matches = 0, windows[0][1], -1
-    for start, w in windows:
-        matches = sum(a == b for a, b in zip(rc, w))
-        if matches > best_matches:
-            best_matches = matches
-            best_start, best_seq = start, w
-    return best_start, best_seq
-
-
 def scan_pairwise(
     seq: str,
     k: int,
@@ -116,17 +98,9 @@ def scan_pairwise(
     label: str = "seq",
 ) -> list[DuplexResult]:
     """
-    For each window of length k, find its best reverse-complement partner among
-    all other windows in the same sequence, then evaluate whether that pair
-    preferentially forms a duplex.
-
-    This gives exactly N results for N windows — one candidate partner per window —
-    rather than the C(N,2) combinatorial explosion of comparing every pair.
-
-    The partner is the window whose sequence most closely matches the reverse
-    complement of the query window (highest position-wise base match count).
-    RNAcofold then decides whether the thermodynamics actually favour binding.
-
+    For each window of length k, evaluate only that window against its reverse
+    complement and rank the most favorable duplex-forming candidates.
+    
     Args:
         seq:   Full transcript, RNA (U-alphabet).
         k:     Window length in nucleotides.
@@ -146,12 +120,7 @@ def scan_pairwise(
     results: list[DuplexResult] = []
     for i, (sa, wa) in enumerate(windows):
         rc = _reverse_complement(wa)
-        # exclude the window itself from partner search
-        others = [w for w in windows if w[0] != sa]
-        if not others:
-            continue
-        sb, wb = _best_rc_match(rc, others)
-        results.append(_analyze_pair(sa, wa, sb, wb))
+        results.append(_analyze_pair(sa, wa, sa, rc))
 
     _export_histogram(results, k, label)
 
