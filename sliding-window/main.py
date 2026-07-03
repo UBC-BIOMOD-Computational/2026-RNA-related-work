@@ -10,7 +10,7 @@ CDH1_PATH = './data/CDH1__NM_004360.5.fasta'
 VIM_PATH  = './data/VIM__NM_003380.5.fasta'
 
 # ── window sizes to evaluate ────────────────────────────────────────────────
-WINDOW_SIZES = [42, 60, 100, 200, 300]
+WINDOW_SIZES = [60, 82]
 
 
 
@@ -30,6 +30,8 @@ def print_result(r: DuplexResult, rank: int):
     )
     print(
         f"  #{rank:>2}  [{r.start_a}]  vs  [{r.start_b}]\n"
+        f"        seq_a={r.seq_a}\n"
+        f"        seq_b={r.seq_b}\n"
         f"        ΔG_a={r.mfe_a:+.2f}  ΔG_b={r.mfe_b:+.2f}  "
         f"ΔG_cofold={r.mfe_cofold:+.2f}  ΔG_binding={r.binding_dg:+.2f} kcal/mol  [{strength}]\n"
         f"        acc_a={r.acc_a:.3f}  acc_b={r.acc_b:.3f}  "
@@ -49,7 +51,7 @@ def determine_best_strand_for_duplex(rna_seq: str, label: str = "seq"):
     """
     for k in WINDOW_SIZES:
         print(f"=== {label}  window k={k} ===")
-        top = scan_pairwise(rna_seq, k=k, step=k, top_n=5, label=label)
+        top = scan_pairwise(rna_seq, k=k, step=k, top_n=10, label=label)
         print(f"  Top {len(top)} duplex candidates:")
         for rank, r in enumerate(top, 1):
             print_result(r, rank)
