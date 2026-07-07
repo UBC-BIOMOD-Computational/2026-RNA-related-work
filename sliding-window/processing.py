@@ -107,7 +107,7 @@ def scan_pairwise(
         step:  Stride between window starts.
                step=k → non-overlapping tiles (fastest).
                step=1 → single-nucleotide resolution (slowest).
-        top_n: Number of top-ranked DuplexResults to return.
+        top_n: Number of top-ranked DuplexResults to return. Can be negative (so last top_n elements)
         label: Short name used in the exported histogram filename.
 
     Returns:
@@ -125,4 +125,7 @@ def scan_pairwise(
     _export_histogram(results, k, label)
 
     results.sort(key=lambda r: r.score, reverse=True)
-    return results[:top_n]
+    if top_n < 0:
+        return results[top_n:]
+    else:
+        return results[:top_n]
