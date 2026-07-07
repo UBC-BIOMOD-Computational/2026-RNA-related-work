@@ -51,7 +51,7 @@ def determine_best_strand_for_duplex(rna_seq: str, label: str = "seq"):
     """
     for k in WINDOW_SIZES:
         print(f"=== {label}  window k={k} ===")
-        top = scan_pairwise(rna_seq, k=k, step=k, top_n=10, label=label)
+        top = scan_pairwise(rna_seq, k=k, step=k, top_n=-2, label=label)
         print(f"  Top {len(top)} duplex candidates:")
         for rank, r in enumerate(top, 1):
             print_result(r, rank)

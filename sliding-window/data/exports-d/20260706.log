@@ -1,0 +1,73 @@
+CDH1: 4811 nt   VIM: 2154 nt
+
+=== CDH1  window k=60 ===
+  k=60: 80 windows → 80 candidate pairs
+  histogram saved → ./data/exports\CDH1_k60_histogram.png
+  Top 2 duplex candidates:
+  # 1  [4500]  vs  [4500]
+        seq_a=UAAAUGUGAAUUUCAACUUUUGACAAUCAAAGAAAAGACUUUUGUUGAAAUAGCUUUACU
+        seq_b=AGUAAAGCUAUUUCAACAAAAGUCUUUUCUUUGAUUGUCAAAAGUUGAAAUUCACAUUUA
+        ΔG_a=-7.30  ΔG_b=-6.90  ΔG_cofold=-88.80  ΔG_binding=-74.60 kcal/mol  [STRONG]
+        acc_a=0.432  acc_b=0.557  score=75.095
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+  # 2  [4740]  vs  [4740]
+        seq_a=AAACAAUUCAAGCUGAGAAAAGUAUUCUCAAAGAUGCAUUUUUAUAAAUUUUAUUAAACA
+        seq_b=UGUUUAAUAAAAUUUAUAAAAAUGCAUCUUUGAGAAUACUUUUCUCAGCUUGAAUUGUUU
+        ΔG_a=-5.00  ΔG_b=-6.20  ΔG_cofold=-84.90  ΔG_binding=-73.70 kcal/mol  [STRONG]
+        acc_a=0.689  acc_b=0.625  score=74.357
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+=== CDH1  window k=82 ===
+  k=82: 58 windows → 58 candidate pairs
+  histogram saved → ./data/exports\CDH1_k82_histogram.png
+  Top 2 duplex candidates:
+  # 1  [3116]  vs  [3116]
+        seq_a=UCACUUUUAAAAAGAAGGGGAGAAGUCAGCUACUCUAGUUCUGUUGUUUUGUGUAUAUAAUUUUUUAAAAAAAAUUUGUGUG
+        seq_b=CACACAAAUUUUUUUUAAAAAAUUAUAUACACAAAACAACAGAACUAGAGUAGCUGACUUCUCCCCUUCUUUUUAAAAGUGA
+        ΔG_a=-11.60  ΔG_b=-6.00  ΔG_cofold=-129.10  ΔG_binding=-111.50 kcal/mol  [STRONG]
+        acc_a=0.407  acc_b=0.576  score=111.991
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+  # 2  [4510]  vs  [4510]
+        seq_a=UUUCAACUUUUGACAAUCAAAGAAAAGACUUUUGUUGAAAUAGCUUUACUGUUUCUCAAGUGUUUUGGAGAAAAAAAUCAAC
+        seq_b=GUUGAUUUUUUUCUCCAAAACACUUGAGAAACAGUAAAGCUAUUUCAACAAAAGUCUUUUCUUUGAUUGUCAAAAGUUGAAA
+        ΔG_a=-12.30  ΔG_b=-9.80  ΔG_cofold=-128.10  ΔG_binding=-106.00 kcal/mol  [STRONG]
+        acc_a=0.449  acc_b=0.492  score=106.471
+        structure: .((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))).
+
+=== VIM  window k=60 ===
+  k=60: 35 windows → 35 candidate pairs
+  histogram saved → ./data/exports\VIM_k60_histogram.png
+  Top 2 duplex candidates:
+  # 1  [1560]  vs  [1560]
+        seq_a=CUCGUCACCUUCGUGAAUACCAAGACCUGCUCAAUGUUAAGAUGGCCCUUGACAUUGAGA
+        seq_b=UCUCAAUGUCAAGGGCCAUCUUAACAUUGAGCAGGUCUUGGUAUUCACGAAGGUGACGAG
+        ΔG_a=-18.10  ΔG_b=-15.70  ΔG_cofold=-118.20  ΔG_binding=-84.40 kcal/mol  [STRONG]
+        acc_a=0.466  acc_b=0.395  score=84.830
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+  # 2  [2040]  vs  [2040]
+        seq_a=CUUGUGCUAGAAUACUUUUUAAAAGGUAUUUUGAAUACCAUUAAAACUGCUUUUUUUUUU
+        seq_b=AAAAAAAAAAGCAGUUUUAAUGGUAUUCAAAAUACCUUUUAAAAAGUAUUCUAGCACAAG
+        ΔG_a=-7.10  ΔG_b=-6.00  ΔG_cofold=-85.40  ΔG_binding=-72.30 kcal/mol  [STRONG]
+        acc_a=0.566  acc_b=0.566  score=72.866
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+=== VIM  window k=82 ===
+  k=82: 26 windows → 26 candidate pairs
+  histogram saved → ./data/exports\VIM_k82_histogram.png
+  Top 2 duplex candidates:
+  # 1  [1066]  vs  [1066]
+        seq_a=UGCGUCUCUGGCACGUCUUGACCUUGAACGCAAAGUGGAAUCUUUGCAAGAAGAGAUUGCCUUUUUGAAGAAACUCCACGAA
+        seq_b=UUCGUGGAGUUUCUUCAAAAAGGCAAUCUCUUCUUGCAAAGAUUCCACUUUGCGUUCAAGGUCAAGACGUGCCAGAGACGCA
+        ΔG_a=-21.10  ΔG_b=-21.40  ΔG_cofold=-159.00  ΔG_binding=-116.50 kcal/mol  [STRONG]
+        acc_a=0.384  acc_b=0.395  score=116.889
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((..)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+  # 2  [2050]  vs  [2050]
+        seq_a=AAUACUUUUUAAAAGGUAUUUUGAAUACCAUUAAAACUGCUUUUUUUUUUCCAGCAAGUAUCCAACCAACUUGGUUCUGCUU
+        seq_b=AAGCAGAACCAAGUUGGUUGGAUACUUGCUGGAAAAAAAAAAGCAGUUUUAAUGGUAUUCAAAAUACCUUUUAAAAAGUAUU
+        ΔG_a=-11.30  ΔG_b=-13.70  ΔG_cofold=-131.10  ΔG_binding=-106.10 kcal/mol  [STRONG]
+        acc_a=0.474  acc_b=0.425  score=106.549
+        structure: (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
