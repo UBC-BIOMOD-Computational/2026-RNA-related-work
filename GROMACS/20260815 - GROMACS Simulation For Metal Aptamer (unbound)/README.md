@@ -31,46 +31,58 @@ Inspect: inspect pdb file
 
 #### Step 2.1 Keep one NMR model (typically Model 1)
 - save model1.pdb models #1.1 or close #1.2-1.25
-    -	pwd or ui save
-    -  	Remove ENDMDL => this is when one pdb file has multiple models, so if you only have one model, it should be fine, but just double check by opening pdb file in text editor and ctrl-f for ENDMDL
+    -	save via:
+        - UI
+        - the command line
+    
+    
+    - Note: You may have to remove `ENDMDL` => this a pdb file note when one pdb file has multiple models, so if you only have one model, it should be fine, but just double check by opening pdb file in text editor and ctrl-f for ENDMDL
 
 
 #### Step 2.2 Remove waters and lead ion. 
 
 - Why do we have to remove Water and metal ions?
     - Ans: Force fields!!! 
+    - For Molecular Dynamics Simulations, you generally re-solvate the entire system using your chosen water model, rather than blindly retaining every PDB water.
+    - However, structurally important waters may be deliberately retained if there's good evidence they are important.
 
 Commands
 - `show atoms`
 - `show solvent`
+- `select :C` selects Carbon ions
+- `select :Pb` selects Lead ions
 
 Do we have any water or metal ions?
 
 Note: water will usually show in X-Ray or Cryo EM structures:
 - NMR structure will not have crystallographic waters in the same sense as an X-ray crystal structure.
 
-### Simulation step 3: cleanup pdb file - fill in backbone missing 
-info residues
-chek pdb site and sequence
-visually inspect for break
-
-open pdb file:
--	CSSEQI is not a special PDB record or keyword. It is simply a compact way of writing three fields together in the PDB format:
--	C = Chain identifier 
--	SSEQ = Sequence number (residue number) 
--	I = Insertion code 
--	The PDB specification combines them into CSSEQI in templates to save space
+#### Step 2.3 
 
 
+- Check all atoms are nucleic acid residues and names
+    - Are there any missing backbones?
+- `select nucleic`
+- `info residues`
+    - visually inspect for break
 
-### Simulation step 5: prep system = get force field files
+You can also open the pdb file
+
+### Step 3 Prep System
+
+#### Step 3.1 - Get force field files
+
 The standard amber99sb-ildn is primarily a protein force field. The RNA improvements (parmbsc0, parmbsc1, OL3, etc.) are distributed as modified AMBER force fields that must already exist in your GROMACS share/gromacs/top directory or be installed separately.
-If you have Amber14SB + OL3/parmbsc1 installed
+
+First we check if you have Amber14SB + OL3/parmbsc1 installed
+
+```bash 
 gmx pdb2gmx \
     -f 1LDZ_model1.pdb \
     -o processed.gro \
     -p topol.top \
     -i posre.itp
+```
 Choose
 Force field:
 Amber14SB + OL3/parmbsc1
