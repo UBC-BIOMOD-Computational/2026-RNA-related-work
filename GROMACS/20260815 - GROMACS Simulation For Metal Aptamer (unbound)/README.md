@@ -65,79 +65,61 @@ Note: water will usually show in X-Ray or Cryo EM structures:
 - `select nucleic`
 - `info residues`
     - visually inspect for break
+- `clashes`
+    - detects two atoms are closer together than expected based on their van der Waals radii.
+    - Can be an issue if you have a lot of clashes
+- `hide all` -> `clashes reveal true`
+- `show atoms`
 
 You can also open the pdb file
 
 ### Step 3 Prep System
 
-#### Step 3.1 - Get force field files
+#### Step 3.1 - Check you have GROMACS, correct force fields
 
-The standard amber99sb-ildn is primarily a protein force field. The RNA improvements (parmbsc0, parmbsc1, OL3, etc.) are distributed as modified AMBER force fields that must already exist in your GROMACS share/gromacs/top directory or be installed separately.
+0. open up your ubuntu shell specifically (windows). or terminal shell (mac)
+1. `gmx --version` : do you have GROMACS installed
+2. `gmx --version | grep "Data prefix"`: Find which folder is GROMACS is installed on your computer 
+3. `ls /usr/local/gromacs/share/gromacs/top`: This is the topology folder
+    - Note: replace `/usr/local/gromacs` with the result of step 2 above
+    - macOS: the GROMACS directory is often somewhere under Homebrew, such as `/opt/homebrew/...` on Apple Silicon or `/usr/local/...` on Intel Macs, so don't assume the same path.
+    
+4. Search specifically that we have RNA-capable force field
+```bash
+find /usr/local/gromacs/share/gromacs/top \
+  -name "rna.rtp" \
+  -o -name "nucleic.rtp" \
+  -o -name "*ol3*" \
+  -o -name "*bsc1*"
+```
+The standard amber99sb-ildn is primarily a protein force field. The RNA improvements (parmbsc0, parmbsc1, OL3, etc.) are distributed as modified AMBER force fields. To use them, they must already exist in your GROMACS share/gromacs/top directory or be installed separately.
 
-First we check if you have Amber14SB + OL3/parmbsc1 installed
+5. Check that I have AMBER OL3 or ff99bsc0χOL3.
+    - OL3 is specifically designed for RNA
 
+6. Install it if you are missing it. I haven't had to install seperately, but let me know if you have trouble.
+
+#### Step 3.2 - Get force field files - AKA getting topology
+ 
+
+1. Go into the folder with your model in the command line
+    - if you are on windows WSL, you will have to get into your mounted folde
+    - `cd /mnt/c` => bring you to your windows folder
+    - continue navigating the file system until you get to the folder
+
+2. Run the following: -> replace the line `-f 1LDZ_model_1.pdb` with your file
 ```bash 
 gmx pdb2gmx \
-    -f 1LDZ_model1.pdb \
+    -f 1LDZ_model_1.pdb \
     -o processed.gro \
     -p topol.top \
     -i posre.itp
 ```
-Choose
-Force field:
-Amber14SB + OL3/parmbsc1
-
-Water:
-TIP3P
-If your installation only shows
-amber99sb-ildn
-I would not use it for RNA.
-Instead install an RNA-capable force field first.
-
-Verify it is installed:
-
-Check your force field files:
-gmx pdb2gmx -h
-
-Step 2. Look inside the force field directory
-Find where GROMACS stores force fields.
-On Linux/WSL this is commonly:
-gmx --version
-Then list the force fields:
-ls /usr/local/gromacs/share/gromacs/top
-
-
-find /usr/local/gromacs/share/gromacs/top -name "rna.rtp" -o -name "nucleic.rtp" -o -name "*ol3*" -o -name "*bsc1*"
- 
-
-
-RG	Internal guanosine	Middle of the chain
-RG3	3′-terminal guanosine	Last nucleotide (free 3′-OH)
-RGN	5′-terminal guanosine	First nucleotide (free 5′ end)
-
-Install it if you are missing it:
-
-
-
-Download the official Amber force field conversion from the MacKerell/Lemkul GROMACS force field repository or the AMBER/GROMACS community distribution.
-These provide directories like
-amber14sb.ff
-containing
-rna.rtp
-dna.rtp
-aminoacids.rtp
-ffbonded.itp
-ffnonbonded.itp
-with the OL3/parmbsc1 corrections already incorporated.
-
-
-For RNA in GROMACS today, I would recommend one of these, in order of preference:
-Force field	Recommendation
-AMBER OL3 + parmbsc1	⭐ Best-established choice for RNA aptamers and folded RNA
-AMBER14SB + OL3	⭐ Excellent if available in your installation
-CHARMM36m nucleic acid	Very good alternative
-AMBER99SB-ILDN	Suitable for proteins, but not recommended by itself for RNA because it lacks the later RNA backbone corrections (OL3/parmbsc1).
-
+3. Then choose the line that says
+```bash
+> Force field: Amber14SB + OL3/parmbsc1
+> Water: TIP3P
+```
 
 This is called getting topology and will produce .top file. expected output files:
 •	processed.gro 
@@ -339,4 +321,96 @@ o	C–C bond is about 1.54 A, but 1.7 can determine carbon positions because 1.7
             - Just like X-ray Crystallography uses Fourier transforms on diffraction patterns, NMR uses Fourier transforms on FIDs (Free Induction Decays).
     - NMR structures usually contain multiple models, so if they all overlap well: good!!
 
+
+### Force Fields:
+
+- How to think about force fields?
+    - What are we actually trying to solve?
+        - Imagine you have an RNA molecule with 100 atoms.
+        - Every atom is pulling or pushing on every other atom.
+        
+Newton's Law is F=ma
+
+So if we know the force on every atom, we can compute
+
+acceleration
+velocity
+new position
+
+repeat 500 billion times
+
+That's literally molecular dynamics.
+
+So the real question becomes:
+
+Where do the forces come from?
+Quantum mechanics!!
+
+Electrons determine chemistry.
+Electrons determine
+	bonds 
+	charges 
+	hydrogen bonds 
+	steric repulsion 
+	resonance 
+	polarization 
+The true equations are the Schrödinger equation.
+Unfortunately...
+For a protein of 50,000 atoms
+the Schrödinger equation is essentially impossible to solve every femtosecond.
+You'd need absurd amounts of computation.
+
+Force fields are a giant approximation
+Instead of solving quantum mechanics every timestep, people asked:
+Can we just build equations that behave similarly?
+That's exactly what a force field is.
+Instead of
+"simulate electrons"
+it says
+"pretend atoms are connected by springs and electrical charges."
+
+SAME THING FOR VIDEO GAMES PHYSICS ENGINES!!
+
+Suppose you're making Minecraft.
+You could simulate
+	atomic nuclei 
+	electron clouds 
+	chemical bonds 
+or...
+you could simply say
+blocks can't overlap
+and
+gravity pulls downward
+
+So every atom interaction becomes one equation:
+	bonds stretching = spring = AKA Hooke's Law
+how do we understand it- so in real life technically the atom on a carbon-carbon bond for a base pair COULD come apart. But its so rare, that in the simulation we just make it so that it could never come apart, just stretches
+	bond angles: H2O likes 104.5 degrees, so the force field pushes it back if the angle of the atoms change. 
+	Dihedral angles – RNA Imagine A-B-C-D
+	Rotate D around the B-C bond.
+	Some rotations are good and others are impossible, is there a force field that can capture likes and dislikes?
+	Electrostatics
+	Van der waals
+
+Equations are mostly the same across all force fields. But like: 
+Carbon-carbon bond
+AMBER might use
+1.526 Å
+CHARMM might use
+1.529 Å
+
+Spring constant for 
+WHY DO WE HAVE DIFFERENT FORCE FIELDS:
+Suppose you optimize a force field so RNA helices match experiments beautifully.
+You might accidentally make protein side chains too rigid.
+Someone else tunes the parameters for proteins.
+Another group focuses on membrane lipids.
+Another on DNA.
+Another on intrinsically disordered proteins.
+
+Isn’t this so FUNNY
+
+So all you computational biologist – what did you learn???
+
+ALL MODELS ARE WRONG BUT SOME ARE USEFUL. SO WHENEVER WE DO ANYTHING, ASK YOURSELF WHAT THE SIMULATION IS ACCOMPLISHING. And experimental is king, always.
 
