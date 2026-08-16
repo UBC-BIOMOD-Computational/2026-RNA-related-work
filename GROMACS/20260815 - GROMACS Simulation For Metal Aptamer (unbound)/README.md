@@ -27,11 +27,27 @@ Inspect: inspect pdb file
 
 -----------------------------------------------------------------
 
-### Simulation step 2: cleanup pdb file - remove waters and lead ion. 
-Why? Force fields!!! 
-show atoms
-show atoms solvent
-Do we have any lead ions?
+### Simulation step 2: cleanup pdb file
+
+#### Step 2.1 Keep one NMR model (typically Model 1)
+- save model1.pdb models #1.1 or close #1.2-1.25
+    -	pwd or ui save
+    -  	Remove ENDMDL => this is when one pdb file has multiple models, so if you only have one model, it should be fine, but just double check by opening pdb file in text editor and ctrl-f for ENDMDL
+
+
+#### Step 2.2 Remove waters and lead ion. 
+
+- Why do we have to remove Water and metal ions?
+    - Ans: Force fields!!! 
+
+Commands
+- `show atoms`
+- `show solvent`
+
+Do we have any water or metal ions?
+
+Note: water will usually show in X-Ray or Cryo EM structures:
+- NMR structure will not have crystallographic waters in the same sense as an X-ray crystal structure.
 
 ### Simulation step 3: cleanup pdb file - fill in backbone missing 
 info residues
@@ -46,12 +62,6 @@ open pdb file:
 -	The PDB specification combines them into CSSEQI in templates to save space
 
 
-Simulation prep pdb = 
--	Keep one NMR model (typically Model 1)
-o	save model1.pdb models #1.1
-o	or close #1.2-25
--	pwd or ui save
--	Remove ENDMDL => this is when one pdb file has multiple models, so if you only have one model, it should be fine, but just double check by opening pdb file in text editor and ctrl-f for ENDMDL
 
 ### Simulation step 5: prep system = get force field files
 The standard amber99sb-ildn is primarily a protein force field. The RNA improvements (parmbsc0, parmbsc1, OL3, etc.) are distributed as modified AMBER force fields that must already exist in your GROMACS share/gromacs/top directory or be installed separately.
