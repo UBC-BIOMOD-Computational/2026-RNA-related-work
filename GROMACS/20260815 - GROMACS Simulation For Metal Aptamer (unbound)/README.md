@@ -16,8 +16,16 @@ Purpose: Simulation of lead (pb) RNA aptamer in GROMACS
 
 - And then check clashscores - it should be blue not red
 
-Result: get the .pdb file from the website.
+Result: get the .pdb or .cif file from the website.
 - If you don’t see the file extension you will have to turn on “Show Hidden Extensions” in your file system. If this is confusing ask Google. 
+
+Inspect: inspect pdb file 
+- Commands: `show all models`
+- Commands: `hide all models`
+
+
+
+-----------------------------------------------------------------
 
 ### Simulation step 2: cleanup pdb file - remove waters and lead ion. 
 Why? Force fields!!! 
