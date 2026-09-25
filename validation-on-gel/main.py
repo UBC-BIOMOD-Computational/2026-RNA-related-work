@@ -10,6 +10,7 @@ from pathlib import Path
 
 from step1_viennaRNA import fold_all_constructs, write_results
 from step2_3d_model import open_rna_composer, prepare_jobs, run_model_command
+from step3_farfar2 import run_farfar2_model
 from step3_oxrna import relax_models
 
 # Sequences are kept in RNA alphabet because ViennaRNA expects U rather than T.
@@ -48,6 +49,29 @@ def main() -> None:
 		help="open RNAComposer after preparing step-2 input files",
 	)
 	parser.add_argument(
+		"--farfar2",
+		action="store_true",
+		help="run FARFAR2 after preparing step-2 input files",
+	)
+	parser.add_argument(
+		"--farfar2-executable",
+		default="rna_denovo.default.linuxgccrelease",
+		help="Rosetta FARFAR2/rna_denovo executable",
+	)
+	parser.add_argument(
+		"--farfar2-output",
+		type=Path,
+		default=Path(__file__).with_name("farfar2"),
+		help="FARFAR2 output directory",
+	)
+	parser.add_argument("--farfar2-nstruct", type=int, default=10)
+	parser.add_argument(
+		"--farfar2-extra-arg",
+		action="append",
+		default=[],
+		help="additional Rosetta argument; may be repeated",
+	)
+	parser.add_argument(
 		"--snapshots-dir",
 		type=Path,
 		default=Path(__file__).with_name("snapshots"),
@@ -74,6 +98,15 @@ def main() -> None:
 		open_rna_composer()
 	if args.model_command:
 		run_model_command(jobs, args.model_command)
+	if args.farfar2:
+		models = run_farfar2_model(
+			args.models_dir,
+			args.farfar2_output,
+			args.farfar2_executable,
+			args.farfar2_nstruct,
+			args.farfar2_extra_arg,
+		)
+		print(f"FARFAR2 produced {len(models)} PDB model(s) in {args.farfar2_output}")
 	if args.relax_command:
 		manifest = relax_models(
 			args.models_dir,
