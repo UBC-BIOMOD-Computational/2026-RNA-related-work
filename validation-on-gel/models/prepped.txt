@@ -1,0 +1,11 @@
+>X
+CGAGGAGGAGAUGCGGGAGC&CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG
+((((((((((((((((((((..(((...(((.......)))..)))))))))))))))))))))))
+
+>Y
+CGAGGAGGAGAUGCGGGAGC&CCGCCCUGCCAAUCCCGAUG&CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG
+(((((((((((((((((((((((((((((((((((((((())))))))))......))))))))))))))))))))))))))))))
+
+>Z
+CCGCCCUGCCAAUCCCGAUG&CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG
+(((((((((((((((((((())))))))))......))))))))))((....))............

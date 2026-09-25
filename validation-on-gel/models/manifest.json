@@ -1,0 +1,36 @@
+[
+  {
+    "name": "X",
+    "fasta": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\X.fasta",
+    "dotbracket": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\X.db",
+    "output": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\X.pdb",
+    "sequences": [
+      "CGAGGAGGAGAUGCGGGAGC",
+      "CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG"
+    ],
+    "energy": -45.7
+  },
+  {
+    "name": "Y",
+    "fasta": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\Y.fasta",
+    "dotbracket": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\Y.db",
+    "output": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\Y.pdb",
+    "sequences": [
+      "CGAGGAGGAGAUGCGGGAGC",
+      "CCGCCCUGCCAAUCCCGAUG",
+      "CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG"
+    ],
+    "energy": -82.2
+  },
+  {
+    "name": "Z",
+    "fasta": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\Z.fasta",
+    "dotbracket": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\Z.db",
+    "output": "C:\\Users\\Hello\\Documents\\code2026\\BIOMOD\\Computational-RNA\\validation-on-gel\\models\\Z.pdb",
+    "sequences": [
+      "CCGCCCUGCCAAUCCCGAUG",
+      "CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG"
+    ],
+    "energy": -38.5
+  }
+]

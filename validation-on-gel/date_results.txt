@@ -1,0 +1,21 @@
+Validation-on-gel RNA folds (2026-09-25)
+====================================================================
+
+[X]
+sequences: CGAGGAGGAGAUGCGGGAGC & CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG
+lengths: 20, 46
+structure: ((((((((((((((((((((..(((...(((.......)))..)))))))))))))))))))))))
+free_energy_kcal_mol: -45.70
+
+[Y]
+sequences: CGAGGAGGAGAUGCGGGAGC & CCGCCCUGCCAAUCCCGAUG & CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG
+lengths: 20, 20, 46
+structure: (((((((((((((((((((((((((((((((((((((((())))))))))......))))))))))))))))))))))))))))))
+free_energy_kcal_mol: -82.20
+
+[Z]
+sequences: CCGCCCUGCCAAUCCCGAUG & CAUCGGGAUUGGGAAAGGCAGGGCGGGCUCCCGCAUCUCCUCCUCG
+lengths: 20, 46
+structure: (((((((((((((((((((())))))))))......))))))))))((....))............
+free_energy_kcal_mol: -38.50
+
