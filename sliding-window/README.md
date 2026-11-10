@@ -63,6 +63,17 @@ python messy_fragments.py \
 
 This analyzes just the selected 20-nt reference from each record while using the surrounding transcript bases for the ±1/±2 shifts and the natural 21-nt extension.
 
+### Visualize and summarize results
+
+After generating the result CSV, make the bar graphs and descriptive-statistics table with:
+
+```bash
+python plot_messy_fragments.py \
+  --input data/exports/my_fragments_with_shifts.csv
+```
+
+This writes `my_fragments_with_shifts_visualization.png` and `my_fragments_with_shifts_summary.csv` next to the input. The figure shows mean bars, sample-standard-deviation whiskers, and individual candidate dots for binding energy, pairing fractions, and both composite scores. The table includes candidate counts, mean, standard deviation, median, minimum, and maximum. These are descriptive statistics across designed variants, not independent experimental replicates, so the script does not report significance tests or p-values.
+
 `--internal-edits all` evaluates every single-base substitution, insertion, and deletion for every reference window and can generate a large CSV. Use `--internal-edits none` to omit synthetic edits. The shape metric uses ViennaRNA's `RNA.abstract_shapes()` interface, available starting with ViennaRNA 2.4.18.
 
 ## Tuning
