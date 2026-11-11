@@ -94,13 +94,9 @@ find /usr/local/gromacs/share/gromacs/top \
 ```
 The standard amber99sb-ildn is primarily a protein force field. The RNA improvements (parmbsc0, parmbsc1, OL3, etc.) are distributed as modified AMBER force fields. To use them, they must already exist in your GROMACS share/gromacs/top directory or be installed separately.
 
-5. Check that I have AMBER OL3 or ff99bsc0χOL3.
-    - OL3 is specifically designed for RNA
 
-6. Install it if you are missing it. I haven't had to install seperately, but let me know if you have trouble.
-
-#### Step 3.2 - Get force field files - AKA getting topology
- 
+#### Step 3.2 - CONVERT PDB TO GMX SYSTEM: 0 Get force field files - AKA getting topology
+OUTPUT: `pdb2gmx` means GROMACS successfully converted your RNA into a force-field-compatible structure/topology
 
 1. Go into the folder with your model in the command line
     - if you are on windows WSL, you will have to get into your mounted folde
@@ -115,34 +111,44 @@ gmx pdb2gmx \
     -p topol.top \
     -i posre.itp
 ```
+- pdb2gmx is a GROMACS program that converts your molecular structure into a form GROMACS can simulate.
+
 3. Then choose the line that says
 ```bash
-> Force field: Amber14SB + OL3/parmbsc1
-> Water: TIP3P
+AMBER OL3 or ff99bsc0χOL3.
 ```
 
 This is called getting topology and will produce .top file. expected output files:
-•	processed.gro 
-•	topol.top 
-•	posre.itp
+•	processed.gro = Your processed 3D structure after pdb2gmx 
+•	topol.top  = The system topology
+    - This is telling simulations what kinds of forces it have to know:
+        - Which force-field parameters are being used
+            - ie: Bonds/interactions, Molecule types, Number of molecules, RNA, water, ions, etc.
+•	posre.itp = position-restraint file
+    - use `head posre.itp` or `head <any file name>` to see the first few lines of each file
+    - in our case the fx, fy and fz is the restraint strength in the x, y, and z directions.
+    - 1000 is pretty strong
+        - It means the atom is strongly encouraged to stay near its starting position.
 
+Troubleshooting:
+- `gmx pdb2gmx -f 1LDZ_model_1.pdb -o processed.gro -p topol.top -i posre.itp -ignh`
 
-gmx pdb2gmx -f clean.pdb -o processed.gro -p topol.top -i posre.itp
+#### Step 3.3: prep system: Prepare simulation box 
+Output: => boxed.gro
 
-
-Select force fields Select your modified AMBER force field and choose the TIP3P explicit water
-•	Use the AMBER99SB-ILDN force field or AMBER14sb with parmbsc1
-•	These are better for nucleic acids than default 
-### Simulation: prep system: => boxed.gro
+```
 gmx editconf \
     -f processed.gro \
     -o boxed.gro \
     -c \
     -d 1.0 \
     -bt dodecahedron
-Typical:
-•	1.0 nm padding 
-•	dodecahedron box
+```
+- `-c` put the RNA at the center of the box
+- `-d`	1.0 nm padding (leave 1.0 nm between the RNA and the box boundary)
+- `bt` dodecahedron box
+
+
 
 
 ### Simulation: prep system = solvate and neutralize 

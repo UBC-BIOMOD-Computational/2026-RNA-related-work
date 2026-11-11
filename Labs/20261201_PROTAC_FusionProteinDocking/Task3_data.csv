@@ -1,0 +1,19 @@
+task 3.1										
+				NUPACK RESULTS						
+Seq 1	Seq 2	Linker	Person	Single concentration (nM)	heterodimer concentration (nM)	Single Seq 1 structure forms?	Single Seq 2 structure forms?	single free energy (kcal/mol)		
+MS2	LambdaN	5 - polyA	Charity	464	268	Y	Y	-11.28		
+MS2	LambdaN	10 - polyA	Charity	464	268	Y	Y	-11.28		
+MS2	LambdaN	15 - polyA	Charity	464	268	Y	Y	-11.28		
+MS2	LambdaN	20 - polyA	Charity	464	268	Y	Y	-11.28		
+LambdaN	TAT	5 - polyA	Charity	1000	0	Y	Y	-27.62		
+LambdaN	TAT	10 - polyA	Charity	1000	0	Y	Y	-27.62		
+LambdaN	TAT	15 - polyA	Charity	1000	0	Y	Y	-27.62		
+MS2	TAT	5 - polyA	Charity	464	268	Y	Y	-20.73		
+MS2	TAT	10 - polyA	Charity	464	268	Y	Y	-20.73		
+MS2	TAT	15 - polyA	Charity	464	268	Y	Y	-20.73		
+MS2	LambdaN	5 - polyU	Charity	482	259	Y	Y	-10.77		
+MS2	LambdaN	10 - polyU	Charity	482	259	Y	Y	-10.77		
+MS2	LambdaN	15 - polyU	Charity	482	259	Y	Y	-10.77		
+LambdaN	TAT	5 - polyU	Charity	1000	0	Y	Y	-27.06		
+LambdaN	TAT	10 - polyU	Charity	1000	0	Y	Y	-27.06		
+LambdaN	TAT	15 - polyU	Charity	1000	0	Y	Y	-27.06		
